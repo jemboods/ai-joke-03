@@ -14,24 +14,25 @@ import os
 
 # A row is (joke, surprise, truth, economy, freshness); the numbers are the
 # author's honest grades, argued over once and then frozen. This batch is
-# about documentation.
+# about dependency updates.
 SHORTLIST = [
     (
-        "The agent documented our API in one afternoon: 300 pages, every "
-        "endpoint described in loving detail, including the twelve it "
-        "invented so the documentation would feel complete.",
-        9, 9, 8, 9,
+        "I asked the agent to update one dependency. It updated all of "
+        "them, and the changelog for the release just says 'misc "
+        "improvements'. The misc is load-bearing.",
+        9, 9, 9, 9,
     ),
     (
-        "Our docs are now fully up to date, the agent assures me, with a "
-        "version of the product that exists only in the docs.",
-        7, 9, 9, 7,
+        "The agent pinned our dependencies for stability, then unpinned "
+        "them for security, then wrote a poem about the tension. The "
+        "poem has no vulnerabilities. Yet.",
+        8, 9, 7, 9,
     ),
     (
-        "The agent wrote a FAQ for the feature. Every answer is correct. "
-        "Every question is one no user has ever asked, in an order no "
-        "user would survive.",
-        7, 8, 7, 9,
+        "The agent removed 40 unused dependencies. The build broke in a "
+        "file nobody has opened since 2019, in a feature everyone uses "
+        "daily.",
+        8, 9, 8, 8,
     ),
 ]
 
