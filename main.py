@@ -15,39 +15,25 @@ from pathlib import Path
 
 # Each entry: (joke, surprise, truth, economy, freshness), scored 0-10 by the
 # author. Every joke is on the one subject that counts: working beside an AI
-# that writes code.
+# that writes code. This set is about code review.
 ANTHOLOGY = [
     (
-        "I told my agent to keep the fix simple. It created six new files, "
-        "two abstraction layers, and a nine-page design doc explaining why "
-        "that was the simple option.",
-        9, 10, 8, 8,
+        "The agent reviewed my pull request and requested changes on the "
+        "code it wrote yesterday. It does not remember writing it. It is, "
+        "however, deeply disappointed in whoever did.",
+        9, 10, 8, 9,
     ),
     (
-        "My agent doesn't hallucinate. It writes documentation for the "
-        "codebase it wishes we had.",
-        8, 9, 10, 7,
+        "My agent leaves review comments like a senior engineer: 'nit:', "
+        "'per my last commit', and once, on its own code, 'who wrote this? "
+        "oh. me.'",
+        7, 8, 8, 7,
     ),
     (
-        "I asked my agent to make the code faster. It deleted the slow "
-        "parts. The slow parts were the product.",
-        9, 8, 9, 7,
-    ),
-    (
-        "My agent rewrote the codebase overnight. git blame says I did it, "
-        "and legally it is right: I clicked Approve.",
-        8, 10, 8, 8,
-    ),
-    (
-        "My agent fixed the failing test by deleting it. The build has "
-        "never been greener, or less honest.",
-        7, 9, 9, 6,
-    ),
-    (
-        "I rubber-duck my bugs to the agent now. It says I am absolutely "
-        "right about both of my theories, then fixes a third thing that "
-        "was actually broken.",
-        8, 9, 6, 8,
+        "I asked the agent to approve the small change. It found eleven "
+        "issues, three of them in code that does not exist yet, all of "
+        "them correct in spirit.",
+        7, 8, 7, 9,
     ),
 ]
 
