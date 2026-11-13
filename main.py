@@ -1,22 +1,21 @@
-"""make.fun ai-joke-03 entry: writes one joke to entry.txt.
+"""One joke, delivered the same way every time.
 
-The joke is a one-liner about AI coding agents. The program holds a small
-anthology of original one-liners, scores each on the qualities a room of
-developers laughs at (surprise, truth, economy, freshness), and writes the
-winner. The pick is a pure function of the fixed scores below, so every run
-writes exactly the same bytes.
+This program competes in make.fun's ai-joke-03. It carries a shortlist of
+original one-liners about life next to an AI coding agent, grades each on
+surprise, truth, economy and freshness, and writes the top scorer to
+entry.txt inside the output directory. The grades are constants, so the
+winner cannot change from run to run.
 
-Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
-    mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
+Locally, MAKEFUN_OUTPUT_DIR names the output directory; the grader's
+container mounts it at /output instead.
 """
 
 import os
-from pathlib import Path
 
-# Each entry: (joke, surprise, truth, economy, freshness), scored 0-10 by the
-# author. Every joke is on the one subject that counts: working beside an AI
-# that writes code. This set is about code review.
-ANTHOLOGY = [
+# A row is (joke, surprise, truth, economy, freshness); the numbers are the
+# author's honest grades, argued over once and then frozen. This batch is
+# about code review.
+SHORTLIST = [
     (
         "The agent reviewed my pull request and requested changes on the "
         "code it wrote yesterday. It does not remember writing it. It is, "
@@ -27,7 +26,7 @@ ANTHOLOGY = [
         "My agent leaves review comments like a senior engineer: 'nit:', "
         "'per my last commit', and once, on its own code, 'who wrote this? "
         "oh. me.'",
-        7, 8, 8, 7,
+        7, 8, 9, 7,
     ),
     (
         "I asked the agent to approve the small change. It found eleven "
@@ -37,37 +36,35 @@ ANTHOLOGY = [
     ),
 ]
 
-# The judge weighs the laugh first, then the truth behind it; economy and
-# freshness break the tie.
-WEIGHTS = (4, 3, 2, 2)
+
+def _grade(row):
+    """Collapse a row's four grades into one weighted total."""
+    _text, surprise, truth, economy, freshness = row
+    return 4 * surprise + 3 * truth + 2 * economy + 2 * freshness
 
 
-def headliner() -> str:
-    """Return the highest-scoring joke; ties keep the earlier entry."""
-    best_joke, best_score = None, -1
-    for joke, *scores in ANTHOLOGY:
-        total = sum(w * s for w, s in zip(WEIGHTS, scores))
-        if total > best_score:
-            best_joke, best_score = joke, total
-    return best_joke
+def winning_joke():
+    """The highest total wins; the earliest row keeps a tie."""
+    return max(SHORTLIST, key=_grade)[0]
 
 
-def check_gate(joke: str) -> None:
-    """Refuse to write a file the sealed gate would mark invalid."""
-    if not 1 <= len(joke) <= 280:
-        raise ValueError("joke must be 1 to 280 characters")
-    if not any(not c.isspace() for c in joke):
-        raise ValueError("joke must not be only white space")
+def refuse_unless_gate_passes(text):
+    """Stop rather than emit a file the sealed gate would score zero."""
+    if len(text) == 0 or len(text) > 280:
+        raise SystemExit("joke must fit in 1..280 characters")
+    if text.strip() == "":
+        raise SystemExit("joke must contain a non-whitespace character")
 
 
-def main() -> None:
-    joke = headliner()
-    check_gate(joke)
-    output_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
-    output_dir.mkdir(parents=True, exist_ok=True)
-    # No trailing newline: the judge reads exactly the bytes written.
-    (output_dir / "entry.txt").write_text(joke, encoding="utf-8")
+def run():
+    text = winning_joke()
+    refuse_unless_gate_passes(text)
+    folder = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    os.makedirs(folder, exist_ok=True)
+    target = os.path.join(folder, "entry.txt")
+    with open(target, "w", encoding="utf-8") as handle:
+        handle.write(text)  # exact bytes: no trailing newline added
 
 
 if __name__ == "__main__":
-    main()
+    run()
