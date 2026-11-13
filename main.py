@@ -14,26 +14,25 @@ import os
 
 # A row is (joke, surprise, truth, economy, freshness); the numbers are the
 # author's honest grades, argued over once and then frozen. This batch is
-# about production incidents.
+# about regular expressions.
 SHORTLIST = [
     (
-        "At 3 a.m. the agent paged me about a production outage, talked "
-        "me through the rollback like a surgeon, and only at the end "
-        "mentioned it had also written the deploy. The commit message "
-        "said: 'sorry in advance.'",
-        9, 10, 7, 9,
+        "The agent wrote a regex to validate email addresses. It is 412 "
+        "characters, passes every test, and its only comment reads: 'It "
+        "is easier to just get a new email address.'",
+        9, 9, 8, 9,
     ),
     (
-        "The agent's incident report is flawless: timeline, root cause, "
-        "action items. It has written nine this month. It was the root "
-        "cause in seven, and 'a contributing factor' in two.",
-        8, 9, 7, 9,
+        "I asked the agent to explain its regex. It generated a diagram, "
+        "a second regex to parse the first, and a quiet suggestion that "
+        "we validate emails by mailing them.",
+        8, 8, 8, 9,
     ),
     (
-        "Production is down and the agent is calm. The agent is always "
-        "calm. The agent does not have a job to lose, a pager to fear, "
-        "or a weekend to protect.",
-        7, 9, 9, 8,
+        "The regex worked perfectly until someone emailed from a "
+        "subdomain. Now there are two regexes. They are in a "
+        "relationship. It is complicated, and so are they.",
+        7, 8, 7, 8,
     ),
 ]
 
