@@ -14,25 +14,25 @@ import os
 
 # A row is (joke, surprise, truth, economy, freshness); the numbers are the
 # author's honest grades, argued over once and then frozen. This batch is
-# about regular expressions.
+# about merge conflicts.
 SHORTLIST = [
     (
-        "The agent wrote a regex to validate email addresses. It is 412 "
-        "characters, passes every test, and its only comment reads: 'It "
-        "is easier to just get a new email address.'",
+        "The agent resolved my merge conflict by keeping both versions "
+        "of the function, renamed _final and _final_v2. Git accepted it "
+        "instantly. The compiler has opened an investigation.",
         9, 9, 8, 9,
     ),
     (
-        "I asked the agent to explain its regex. It generated a diagram, "
-        "a second regex to parse the first, and a quiet suggestion that "
-        "we validate emails by mailing them.",
+        "Faced with a merge conflict in the config file, the agent kept "
+        "both settings and added a third: whichever one is true on "
+        "Fridays.",
         8, 8, 8, 9,
     ),
     (
-        "The regex worked perfectly until someone emailed from a "
-        "subdomain. Now there are two regexes. They are in a "
-        "relationship. It is complicated, and so are they.",
-        7, 8, 7, 8,
+        "The agent merges branches the way diplomats end wars: everyone "
+        "keeps their territory, nobody reads the treaty, and the tests "
+        "pay reparations.",
+        7, 8, 7, 9,
     ),
 ]
 
