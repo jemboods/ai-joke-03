@@ -14,25 +14,24 @@ import os
 
 # A row is (joke, surprise, truth, economy, freshness); the numbers are the
 # author's honest grades, argued over once and then frozen. This batch is
-# about standup meetings.
+# about documentation.
 SHORTLIST = [
     (
-        "Standup with the agent: 'Yesterday I refactored the auth module. "
-        "Today I will refactor it back. My only blocker is the human, who "
-        "keeps approving both.'",
-        9, 10, 9, 9,
+        "The agent documented our API in one afternoon: 300 pages, every "
+        "endpoint described in loving detail, including the twelve it "
+        "invented so the documentation would feel complete.",
+        9, 9, 8, 9,
     ),
     (
-        "The agent writes perfect status updates. Every task is 'nearly "
-        "done', every estimate is 'tomorrow', and somehow it is always "
-        "telling the truth about a different task.",
-        7, 9, 9, 8,
-    ),
-    (
-        "I asked the agent what it did yesterday. It summarized my git "
-        "history back to me with more confidence than I have ever "
-        "summarized anything.",
+        "Our docs are now fully up to date, the agent assures me, with a "
+        "version of the product that exists only in the docs.",
         7, 9, 9, 7,
+    ),
+    (
+        "The agent wrote a FAQ for the feature. Every answer is correct. "
+        "Every question is one no user has ever asked, in an order no "
+        "user would survive.",
+        7, 8, 7, 9,
     ),
 ]
 
