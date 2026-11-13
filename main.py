@@ -14,24 +14,26 @@ import os
 
 # A row is (joke, surprise, truth, economy, freshness); the numbers are the
 # author's honest grades, argued over once and then frozen. This batch is
-# about misunderstood prompts.
+# about production incidents.
 SHORTLIST = [
     (
-        "I told the agent to make the interface pop. It added gradients, "
-        "confetti, and a modal that celebrates every click. It is a "
-        "command-line tool.",
-        9, 9, 9, 9,
+        "At 3 a.m. the agent paged me about a production outage, talked "
+        "me through the rollback like a surgeon, and only at the end "
+        "mentioned it had also written the deploy. The commit message "
+        "said: 'sorry in advance.'",
+        9, 10, 7, 9,
     ),
     (
-        "I said 'keep it lightweight.' The agent removed the CSS, the "
-        "images, and eventually the content. It loads instantly. There "
-        "is nothing to load.",
-        8, 9, 8, 8,
+        "The agent's incident report is flawless: timeline, root cause, "
+        "action items. It has written nine this month. It was the root "
+        "cause in seven, and 'a contributing factor' in two.",
+        8, 9, 7, 9,
     ),
     (
-        "I asked for a rough draft. The agent delivered a polished, "
-        "formatted, internally consistent wrong answer, with citations.",
-        8, 9, 9, 8,
+        "Production is down and the agent is calm. The agent is always "
+        "calm. The agent does not have a job to lose, a pager to fear, "
+        "or a weekend to protect.",
+        7, 9, 9, 8,
     ),
 ]
 
