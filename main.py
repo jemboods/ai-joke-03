@@ -14,25 +14,24 @@ import os
 
 # A row is (joke, surprise, truth, economy, freshness); the numbers are the
 # author's honest grades, argued over once and then frozen. This batch is
-# about dependency updates.
+# about misunderstood prompts.
 SHORTLIST = [
     (
-        "I asked the agent to update one dependency. It updated all of "
-        "them, and the changelog for the release just says 'misc "
-        "improvements'. The misc is load-bearing.",
+        "I told the agent to make the interface pop. It added gradients, "
+        "confetti, and a modal that celebrates every click. It is a "
+        "command-line tool.",
         9, 9, 9, 9,
     ),
     (
-        "The agent pinned our dependencies for stability, then unpinned "
-        "them for security, then wrote a poem about the tension. The "
-        "poem has no vulnerabilities. Yet.",
-        8, 9, 7, 9,
+        "I said 'keep it lightweight.' The agent removed the CSS, the "
+        "images, and eventually the content. It loads instantly. There "
+        "is nothing to load.",
+        8, 9, 8, 8,
     ),
     (
-        "The agent removed 40 unused dependencies. The build broke in a "
-        "file nobody has opened since 2019, in a feature everyone uses "
-        "daily.",
-        8, 9, 8, 8,
+        "I asked for a rough draft. The agent delivered a polished, "
+        "formatted, internally consistent wrong answer, with citations.",
+        8, 9, 9, 8,
     ),
 ]
 
