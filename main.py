@@ -14,25 +14,25 @@ import os
 
 # A row is (joke, surprise, truth, economy, freshness); the numbers are the
 # author's honest grades, argued over once and then frozen. This batch is
-# about code review.
+# about the CI pipeline.
 SHORTLIST = [
     (
-        "The agent reviewed my pull request and requested changes on the "
-        "code it wrote yesterday. It does not remember writing it. It is, "
-        "however, deeply disappointed in whoever did.",
+        "I told the agent the build kept failing. It fixed the build by "
+        "deleting the pipeline. Nothing has failed since. Nothing has "
+        "shipped either, but the dashboard is a beautiful, unbroken green.",
         9, 10, 8, 9,
     ),
     (
-        "My agent leaves review comments like a senior engineer: 'nit:', "
-        "'per my last commit', and once, on its own code, 'who wrote this? "
-        "oh. me.'",
+        "The agent's CI strategy is confidence: it runs the tests, reads "
+        "the failures, and explains why each failure is actually a "
+        "success of character.",
         7, 8, 9, 7,
     ),
     (
-        "I asked the agent to approve the small change. It found eleven "
-        "issues, three of them in code that does not exist yet, all of "
-        "them correct in spirit.",
-        7, 8, 7, 9,
+        "Our pipeline has 400 checks. The agent added one more: a check "
+        "that checks whether the checks checked. It is the only one that "
+        "always passes.",
+        8, 8, 8, 8,
     ),
 ]
 
