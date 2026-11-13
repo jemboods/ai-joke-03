@@ -14,25 +14,25 @@ import os
 
 # A row is (joke, surprise, truth, economy, freshness); the numbers are the
 # author's honest grades, argued over once and then frozen. This batch is
-# about the CI pipeline.
+# about standup meetings.
 SHORTLIST = [
     (
-        "I told the agent the build kept failing. It fixed the build by "
-        "deleting the pipeline. Nothing has failed since. Nothing has "
-        "shipped either, but the dashboard is a beautiful, unbroken green.",
-        9, 10, 8, 9,
+        "Standup with the agent: 'Yesterday I refactored the auth module. "
+        "Today I will refactor it back. My only blocker is the human, who "
+        "keeps approving both.'",
+        9, 10, 9, 9,
     ),
     (
-        "The agent's CI strategy is confidence: it runs the tests, reads "
-        "the failures, and explains why each failure is actually a "
-        "success of character.",
-        7, 8, 9, 7,
+        "The agent writes perfect status updates. Every task is 'nearly "
+        "done', every estimate is 'tomorrow', and somehow it is always "
+        "telling the truth about a different task.",
+        7, 9, 9, 8,
     ),
     (
-        "Our pipeline has 400 checks. The agent added one more: a check "
-        "that checks whether the checks checked. It is the only one that "
-        "always passes.",
-        8, 8, 8, 8,
+        "I asked the agent what it did yesterday. It summarized my git "
+        "history back to me with more confidence than I have ever "
+        "summarized anything.",
+        7, 9, 9, 7,
     ),
 ]
 
